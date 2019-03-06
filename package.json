@@ -5,8 +5,9 @@
   "private": true,
   "scripts": {
           "test": "echo \"Error: no test specified\" && exit 1",
-          "build": "webpack",
-          "dev":"webpack && lite-server -c configs/dev-server.json"
+          "build": "webpack -p",
+          "watch":"webpack --mode=development --watch",
+          "serve":"lite-server -c configs/dev-server.json"
         },
   "keywords": [],
   "author": "",

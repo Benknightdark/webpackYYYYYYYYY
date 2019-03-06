@@ -4,7 +4,9 @@ function component() {
   
     // Lodash, currently included via a script, is required for this line to work
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');  
+    console.log("aaa");
+
     return element;
   }
   
-  document.body.appendChild(component());
+  //document.body.appendChild(component());
