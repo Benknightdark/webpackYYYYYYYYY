@@ -1,3 +1,60 @@
-.hello {
-    color: red;
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+canvas {
+  display: block;
+}
+
+#loading-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-overlay-hidden {
+  display: none !important;
+}
+
+
+#loading-bar {
+  width: 25em;
+  height: 1em;
+  border-radius: 0.25em;
+  background-color: black;
+  border: 1px solid grey;
+  display: inline-flex;
+}
+
+#progress {
+  background-color: #75b800;
+  height: inherit;
+  border-radius: inherit;
+  width: 5%;
+}
+
+      .filepond--drop-label {
+      color: #4c4e53;
+  }
+
+  .filepond--label-action {
+      text-decoration-color: #babdc0;
+  }
+
+  .filepond--panel-root {
+      border-radius: 2em;
+      background-color: #edf0f4;
+      height: 1em;
+  }
+
+  .filepond--item-panel {
+      background-color: #595e68;
+  }
+
+  .filepond--drip-blob {
+      background-color: #7f8a9a;
   }
