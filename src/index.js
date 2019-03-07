@@ -3,6 +3,7 @@ import _ from 'lodash';
 // import * as gui from "dat.gui";
 // import * as stats from 'stats-js';
 import printMe from './print.js';
+import './style.css'
 
 
 function component() {
