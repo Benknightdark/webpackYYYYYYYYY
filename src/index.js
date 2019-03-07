@@ -3,19 +3,16 @@ import { draw } from './CustomThreeJS/CreateView.js'
 (() => {
 
   const component = () => {
-    let element = document.createElement('div');
-    // Lodash, currently included via a script, is required for this line to work
-    element.innerHTML = `
-      <div id="loading-overlay" class="loading-overlay-hidden">
-      <div id="loading-bar">
-          <span id="progress">      
-          </span>
-      </div>
-      </div>
-    <div id="statsDashboard"></div>
-    <div id="loadingInfo"></div>
-    <div id="chart"></div>
-  `;
+    let element = document.createRange().createContextualFragment(` <div id="loading-overlay" class="loading-overlay-hidden">
+    <div id="loading-bar">
+        <span id="progress">      
+        </span>
+    </div>
+    </div>
+  <div id="loadingInfo"></div>
+  <div id="chart"></div>
+  <div id="statsDashboard" style="display:absolute!important"></div>`);
+   
 
 
     return element;

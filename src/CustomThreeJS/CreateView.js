@@ -11,10 +11,11 @@ import { initProgressBar } from "./ProgressLoadingBar.js";
     const initStats = () => {
         stats = new Stats();
         stats.setMode(0); // 0: fps, 1: ms
-       // stats.domElement.style.position = 'absolute';
+        stats.domElement.style.position = 'block';
         stats.domElement.style.left = '50px';
         stats.domElement.style.right = '20px';
         stats.domElement.style.top = '20px';
+        stats.domElement.style.width = '200px';
         document.getElementById("statsDashboard").appendChild(stats.domElement);
     }
  
@@ -206,7 +207,7 @@ import { initProgressBar } from "./ProgressLoadingBar.js";
 
     // 執行所有threejs相關function
   export  const draw = (url) => {
-        initStats();
+    initStats();
         initScene();
         initCamera();
         initLight();
@@ -216,7 +217,7 @@ import { initProgressBar } from "./ProgressLoadingBar.js";
         initControls();
         animate();
         initGUI();
-
+      
 
     }
    // draw();
