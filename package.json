@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack -p",
+    "build": "webpack -p --config webpack.prod.config.js",
     "watch": "webpack  --config webpack.development.config.js --watch",
     "start": "webpack-dev-server   --config webpack.development.config.js --open"
   },
