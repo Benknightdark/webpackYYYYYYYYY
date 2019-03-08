@@ -3,7 +3,7 @@ import * as Stats from 'stats-js';
 import * as THREE from 'three';
 import {
     STLLoader
-} from './Loaders/STLLoader.js';
+} from './Loaders/STLLoader';
 import { TrackballControls } from "./Controls/TrackBallControls.js";
 import { initProgressBar } from "./ProgressLoadingBar";
     let renderer, stats, camera, scene, light, controls, gui, options, manager, mesh,progressBarComponent;
