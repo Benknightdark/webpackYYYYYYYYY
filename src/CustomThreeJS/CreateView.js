@@ -5,7 +5,7 @@ import {
     STLLoader
 } from './Loaders/STLLoader.js';
 import { TrackballControls } from "./Controls/TrackBallControls.js";
-import { initProgressBar } from "./ProgressLoadingBar.js";
+import { initProgressBar } from "./ProgressLoadingBar";
     let renderer, stats, camera, scene, light, controls, gui, options, manager, mesh,progressBarComponent;
     // 初始化Stats Performance Dashboard
     const initStats = () => {

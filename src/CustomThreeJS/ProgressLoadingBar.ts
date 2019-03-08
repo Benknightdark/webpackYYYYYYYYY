@@ -9,10 +9,10 @@
  * @returns
  */
 export const initProgressBar= (progressBarId = "#progress", loadingOverlayId = '#loading-overlay', percentCompleteNumber = 1)=> {
-    const progressBar = document.querySelector(progressBarId);
+    const progressBar:any = document.querySelector(progressBarId);
     const loadingOverlay = document.querySelector(loadingOverlayId);
     let percentComplete = percentCompleteNumber;
-    let frameID = null;
+    let frameID:any = null;
 
     const updateAmount = 0.5; // in percent of bar width, should divide 100 
    
