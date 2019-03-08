@@ -4,14 +4,14 @@
  */
 export const Detector = {
 
-	canvas: !! w.CanvasRenderingContext2D,
+	canvas: !! window.CanvasRenderingContext2D,
 	webgl: ( function () {
 
 		try {
 
 			let canvas = document.createElement( 'canvas' );
 		//	$("#stl-viewer").append('<canvas></canvas>')
-			 return  !! ( w.WebGLRenderingContext && ( canvas.getContext( 'webgl' ) || canvas.getContext( 'experimental-webgl' ) ) );
+			 return  !! ( window.WebGLRenderingContext && ( canvas.getContext( 'webgl' ) || canvas.getContext( 'experimental-webgl' ) ) );
 
 		} catch ( e ) {
 
@@ -20,8 +20,8 @@ export const Detector = {
 		}
 
 	} )(),
-	workers: !! w.Worker,
-	fileapi: w.File && w.FileReader && w.FileList && w.Blob,
+	workers: !!window.Worker,
+	fileapi: window.File && window.FileReader && window.FileList && window.Blob,
 
 	getWebGLErrorMessage: function () {
 
@@ -37,9 +37,9 @@ export const Detector = {
 		element.style.width = '400px';
 		element.style.margin = '5em auto 0';
 
-		if ( ! this.webgl ) {
+	//	if ( ! this.webgl ) {
 
-			element.innerHTML = w.WebGLRenderingContext ? [
+			element.innerHTML = window.WebGLRenderingContext ? [
 				'Your graphics card does not seem to support <a href="http://khronos.org/webgl/wiki/Getting_a_WebGL_Implementation" style="color:#000">WebGL</a>.<br />',
 				'Find out how to get it <a href="http://get.webgl.org/" style="color:#000">here</a>.'
 			].join( '\n' ) : [
@@ -47,7 +47,7 @@ export const Detector = {
 				'Find out how to get it <a href="http://get.webgl.org/" style="color:#000">here</a>.'
 			].join( '\n' );
 
-		}
+	//	}
 
 		return element;
 

@@ -7,7 +7,17 @@ import {
 import { TrackballControls } from "./Controls/TrackBallControls.js";
 import { initProgressBar } from "./ProgressLoadingBar";
 import { Detector } from "./Detector.js";
-let renderer, stats, camera, scene, light, controls, gui, options, manager, mesh, progressBarComponent;
+let renderer:THREE.WebGLRenderer,
+     stats:Stats,
+      camera:THREE.PerspectiveCamera,
+       scene:THREE.Scene, 
+       light:THREE.DirectionalLight, 
+       controls:TrackballControls, 
+       gui, 
+       options, 
+       manager:THREE.LoadingManager, 
+       mesh, 
+       progressBarComponent:any;
 // 初始化Stats Performance Dashboard
 const initStats = () => {
     stats = new Stats();
@@ -90,10 +100,10 @@ const initManger = () => {
 }
 
 //初始化3D模型
-const initModel = (url) => {
+const initModel = (url:string) => {
     let loader = new STLLoader(manager);
     let material;
-    loader.load(url, function (geometry) {
+    loader.load(url, function (geometry:any) {
         if (geometry.hasColors) {
             material = new THREE.MeshPhongMaterial({
                 opacity: geometry.alpha,
@@ -205,17 +215,24 @@ const initGUI = () => {
 }
 
 // 執行所有threejs相關function
-export const draw = (url) => {
-    initStats();
-    initScene();
-    initCamera();
-    initLight();
-    initManger();
-    initModel(url);
-    initRender();
-    initControls();
-    animate();
-    initGUI();
+export const draw = (url:string) => {
+    if (Detector.webgl) {
+        initStats();
+        initScene();
+        initCamera();
+        initLight();
+        initManger();
+        initModel(url);
+        initRender();
+        initControls();
+        animate();
+        initGUI();
+    }else{
+        Detector.addGetWebGLMessage(Detector.getWebGLErrorMessage())
+        ;
+    }
+
+
 }
    // draw();
 
