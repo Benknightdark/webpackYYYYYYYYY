@@ -1,5 +1,4 @@
 import * as dat from "dat.gui";
-import * as Stats from 'stats-js';
 import * as THREE from 'three';
 import {
     STLLoader
@@ -7,8 +6,9 @@ import {
 import { TrackballControls } from "./Controls/TrackBallControls.js";
 import { initProgressBar } from "./ProgressLoadingBar";
 import { Detector } from "./Detector.js";
+import * as Stats from 'stats.js'
 let renderer:THREE.WebGLRenderer,
-     stats:Stats,
+     stats:any,
       camera:THREE.PerspectiveCamera,
        scene:THREE.Scene, 
        light:THREE.DirectionalLight, 
@@ -20,7 +20,7 @@ let renderer:THREE.WebGLRenderer,
        progressBarComponent:any;
 // 初始化Stats Performance Dashboard
 const initStats = () => {
-    stats = new Stats();
+    stats = new  Stats();
     stats.setMode(0); // 0: fps, 1: ms
     stats.domElement.style.position = 'block';
     stats.domElement.style.left = '50px';

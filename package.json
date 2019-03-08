@@ -28,6 +28,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "@types/stats.js": "^0.17.0",
     "dat.gui": "^0.7.5",
     "lodash": "^4.17.11",
     "stats-js": "^1.0.0",

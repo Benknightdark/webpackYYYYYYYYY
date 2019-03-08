@@ -1,5 +1,5 @@
 import '../assets/css/style.css'
-import { draw } from './CustomThreeJS/CreateView.js'
+import { draw } from './CustomThreeJS/CreateView'
 ((d,w) => {
 
   const component = () => {
