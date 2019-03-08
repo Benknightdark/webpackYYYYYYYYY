@@ -2,7 +2,6 @@
  * @author alteredq / http://alteredqualia.com/
  * @author mr.doob / http://mrdoob.com/
  */
-let w:any=window;
 export const Detector = {
 
 	canvas: !! w.CanvasRenderingContext2D,
@@ -54,7 +53,7 @@ export const Detector = {
 
 	},
 
-	addGetWebGLMessage: function ( parameters:any ) {
+	addGetWebGLMessage: function ( parameters ) {
 
 		let parent, id, element;
 
